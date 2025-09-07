@@ -18,7 +18,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@ui/*" : ["./components/ui/*"]
+      "@ui/*" : ["./components/ui/*"],
+      "@api/*" : ["./app/api/*"]
     },
     "plugins": [
       {

@@ -12,10 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "next": "^15.5.2",
+    "next-auth": "^4.24.11",
     "react": "^19.1.1",
+    "react-calendar-heatmap": "^1.10.0",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@types/next-auth": "^3.13.0",
     "@types/node": "^24.3.1",
     "@types/react": "^19.1.12",
     "typescript": "^5.9.2"

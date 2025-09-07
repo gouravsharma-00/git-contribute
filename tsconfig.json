@@ -17,6 +17,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "paths": {
+      "@ui/*" : ["./components/ui/*"]
+    },
     "plugins": [
       {
         "name": "next"

@@ -1,5 +1,7 @@
-import React, { JSX } from 'react'
-
+"use client"
+import React from 'react'
+import { SessionProvider } from 'next-auth/react'
+import './globals.css'
 /**
  * 
  * @param {{children} : {children: React.ReactNode}} param root child
@@ -13,8 +15,18 @@ export default function RootLayout({children}: {children : React.ReactNode}) {
                 <link rel='canonical' href='https://git-contribute.vercel.app' />
                 <title>git-contribute | Hack Your System</title>
             </head>
-            <body>
-                {children}
+            <body style={{
+                backgroundColor: '#0a0a0a',
+                color: '#ededed',
+                minHeight: '100vh',
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}>
+                <SessionProvider>
+                    {children}
+                </SessionProvider>
             </body>
         </html>
     )

@@ -2,6 +2,7 @@
 import React from 'react'
 import { SessionProvider } from 'next-auth/react'
 import './globals.css'
+import FeedBack from '@ui/feedback.report'
 /**
  * 
  * @param {{children} : {children: React.ReactNode}} param root child
@@ -45,6 +46,7 @@ export default function RootLayout({children}: {children : React.ReactNode}) {
             }}>
                 <SessionProvider>
                     {children}
+                    <FeedBack />
                 </SessionProvider>
             </body>
         </html>

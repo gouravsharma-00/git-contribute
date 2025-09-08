@@ -12,10 +12,13 @@ export default function LoadingScreen() {
             alignItems: 'center',
             backgroundColor: 'rgba(255, 255, 255, 0.5)',
             backdropFilter: 'blur(5px)',
-            pointerEvents: 'none'
+            pointerEvents: 'none',
+            flexDirection: 'column'
         }}>
             <Image src={CatLoader} alt='loading' />
-
+            <p style={{
+                backgroundColor: 'black'
+            }}>It may take 4-5 mins to complete 😴</p>
         </div>
     )
 }

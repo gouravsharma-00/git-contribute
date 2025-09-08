@@ -50,6 +50,19 @@ export default function ClientPage() {
         mongoPost();
     }, [session])
 
+useEffect(() => {
+  alert(
+    "⚠️ To display your full contribution activity, please enable private contributions on your GitHub profile:\n\n" +
+    "1. Go to GitHub and sign in.\n" +
+    "2. Click your profile picture (top-right) → Settings.\n" +
+    "3. In the left sidebar, select 'Profile'.\n" +
+    "4. Scroll down to 'Contributions & activity'.\n" +
+    "5. Check the box for 'Include private contributions on my profile'.\n\n" +
+    "Once enabled, refresh this page to see your updated contributions ✅"
+  );
+}, []);
+
+
     // console.log(session)
     if(!session) {
         return(

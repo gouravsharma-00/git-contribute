@@ -27,7 +27,7 @@ export async function POST(req: Request) {
   const repoName = repo.name;
 
   // Create N random commits
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 50; i++) {
     const date = randomDateWithinPastYear();
     const content = `Commit ${i} at ${date.toISOString()}`;
 

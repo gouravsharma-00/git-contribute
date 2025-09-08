@@ -21,7 +21,8 @@
       "@ui/*" : ["./components/ui/*"],
       "@api/*" : ["./app/api/*"],
       "@public/*" : ["./public/*"],
-      "@constants/*" : ["./constants/*"]
+      "@constants/*" : ["./constants/*"],
+      "@db/*" : ["./database/*"]
     },
     "plugins": [
       {

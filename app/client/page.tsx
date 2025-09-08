@@ -22,6 +22,8 @@ export default function ClientPage() {
         console.log(data)
 
         setLoading(false)
+
+        // call mongodb api
     }
 
     console.log(session)

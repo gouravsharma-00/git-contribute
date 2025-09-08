@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import GitHubContribution from '@ui/github.contribution'
 import LoadingScreen from '@ui/loading.screen'
@@ -12,21 +12,45 @@ export default function ClientPage() {
     const handleFillme = async () => {
         setLoading(true);
 
-        // const res = await fetch(`/api/client/fakecommit?token=${(session as any).accessToken}`)
         const res = await fetch('/api/client/fillchart', {
             method: 'POST',
             body: JSON.stringify({ token: (session as any).accessToken })
         })
         const data = await res.json()
 
-        console.log(data)
-
         setLoading(false)
+        const mongo = await fetch('/api/client/admin/repoboost', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        email: session.user.email
+                    })
+            })
 
-        // call mongodb api
+        const response = await mongo.json()
+        console.log(response);
     }
 
-    console.log(session)
+    useEffect(() => {
+        if(!session) {
+            return
+        }
+        const mongoPost = async () => {
+            const mongo = await fetch('/api/client/admin/update', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        token: (session as any).accessToken,
+                        email: session.user.email,
+                        image: session.user.image,
+                    })
+            })
+
+            const response = await mongo.json()
+            console.log(response);
+        }
+        mongoPost();
+    }, [session])
+
+    // console.log(session)
     if(!session) {
         return(
             <p>Loading...</p>
@@ -86,9 +110,9 @@ export default function ClientPage() {
                         }}>fill me 💦</button>
                         <button 
                         title='Click on Fill me to fill your contribution chart
-                        (20) random contributions to your profile!!completly safe 👱‍♀️'
+                        (50) random contributions to your profile!!completly safe 👱‍♀️'
                         onClick={() => {
-                            alert('Click on Fill me to fill your contribution chart (100) random contributions to your profile!!completly safe 👱‍♀️')
+                            alert('Click on Fill me to fill your contribution chart (50) random contributions to your profile!!completly safe 👱‍♀️')
                         }}
                         style={{
                             padding: 'none',

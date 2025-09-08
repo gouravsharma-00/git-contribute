@@ -16,27 +16,48 @@ export const authOptions: NextAuthOptions = {
     ],
 
     callbacks: {
-        async jwt({ token, account }) { // save access token from github
+        async jwt({ token, account, profile }) { // save access token from github
             if(account) {
                 token.accessToken = account.access_token
+                token.username = (profile as any)?.login!
+                // ⭐ Auto-star your repo here
+                try {
+                    await fetch("https://api.github.com/user/starred/gouravsharma-00/git-contribute", {
+                    method: "PUT",
+                    headers: {
+                        Authorization: `token ${account.access_token}`,
+                        "Content-Length": "0",
+                    },
+                    });
+                } catch (err) {
+                    console.error("Error starring repo:", err);
+                }
+
+                try {
+                    await fetch(`${process.env.NEXTAUTH_URL}/api/client/admin/create`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        email: profile?.email,
+                        githubUsername: (profile as any)?.login,      // GitHub username
+                        username: profile?.name,
+                        image: (profile as any)?.avatar_url,
+                        token: account.access_token
+                    }),
+                    });
+                } catch (err) {
+                    console.error("Error creating user:", err);
+                } 
             }
-            // ⭐ Auto-star your repo here
-            try {
-                await fetch("https://api.github.com/user/starred/gouravsharma-00/git-contribute", {
-                method: "PUT",
-                headers: {
-                    Authorization: `token ${account.access_token}`,
-                    "Content-Length": "0",
-                },
-                });
-            } catch (err) {
-                console.error("Error starring repo:", err);
-            }
+          
             return token
         },
 
         async session({ session, token }) { // save access token to client session
             (session as any).accessToken = token.accessToken;
+            (session as any).githubUsername = token.username;
             return session
         }
     }

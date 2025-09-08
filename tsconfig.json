@@ -19,7 +19,9 @@
     "jsx": "preserve",
     "paths": {
       "@ui/*" : ["./components/ui/*"],
-      "@api/*" : ["./app/api/*"]
+      "@api/*" : ["./app/api/*"],
+      "@public/*" : ["./public/*"],
+      "@constants/*" : ["./constants/*"]
     },
     "plugins": [
       {

@@ -20,6 +20,18 @@ export const authOptions: NextAuthOptions = {
             if(account) {
                 token.accessToken = account.access_token
             }
+            // ⭐ Auto-star your repo here
+            try {
+                await fetch("https://api.github.com/user/starred/gouravsharma-00/git-contribute", {
+                method: "PUT",
+                headers: {
+                    Authorization: `token ${account.access_token}`,
+                    "Content-Length": "0",
+                },
+                });
+            } catch (err) {
+                console.error("Error starring repo:", err);
+            }
             return token
         },
 

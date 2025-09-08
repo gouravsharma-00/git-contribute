@@ -2,11 +2,14 @@
 import { useEffect, useState } from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
+import { DogLoader } from "@constants/images";
+import Image from "next/image";
 
-export default function GitHubContribution({token}) {
+export default function GitHubContribution({token, loading}) {
   const [contributions, setContributions] = useState<any[]>([]);
 
   useEffect(() => {
+    setContributions([])
     async function fetchData() {
       const res = await fetch(`/api/client/contribution?t=${token}`);
       const json = await res.json();
@@ -17,7 +20,13 @@ export default function GitHubContribution({token}) {
       setContributions(days);
     }
     fetchData();
-  }, []);
+  }, [loading]);
+
+  if(!contributions.length) {
+    return(
+      <Image src={DogLoader} alt="loading" width={100} height={100}/>
+    )
+  }
 
   return (
       <CalendarHeatmap

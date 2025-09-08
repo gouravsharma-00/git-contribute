@@ -1,11 +1,9 @@
 "use client"
 import React from 'react'
 import { signIn, useSession, signOut } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
 
 
 export default function GitHubButton() {
-    const router = useRouter()
     const {data : session} = useSession()
 
   const handleGit = async () => {

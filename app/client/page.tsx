@@ -1,10 +1,28 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { useSession } from 'next-auth/react'
 import GitHubContribution from '@ui/github.contribution'
+import LoadingScreen from '@ui/loading.screen'
+import { CatConfuss } from '@constants/images'
+import Image from 'next/image'
 
 export default function ClientPage() {
     const {data: session} = useSession()
+    const [loading, setLoading] = useState<boolean>(false);
+    const handleFillme = async () => {
+        setLoading(true);
+
+        // const res = await fetch(`/api/client/fakecommit?token=${(session as any).accessToken}`)
+        const res = await fetch('/api/client/fillchart', {
+            method: 'POST',
+            body: JSON.stringify({ token: (session as any).accessToken })
+        })
+        const data = await res.json()
+
+        console.log(data)
+
+        setLoading(false)
+    }
 
     console.log(session)
     if(!session) {
@@ -26,12 +44,14 @@ export default function ClientPage() {
         }}>
             <div style={{
                 display: 'flex',
-                width: '100%'
+                justifyContent: 'start',
+                alignItems: 'start',
+                width: '100%',
+                gap: '0.35rem'
                 
             }}>
                 <figure style={{
                     border: '1px #cccccc solid',
-                    margin: 'auto'
                 }}>
                     <img src={session.user.image} alt='user photo' style={{
                         width: '100%',
@@ -44,15 +64,51 @@ export default function ClientPage() {
                 </figure>
                 <div style={{
                     display: 'flex',
+                    flexDirection: 'column',
                     gap: '0.75rem'
                 }}>
-                    Name: {session.user.name}
-                    Email: {session.user.email}
+                   <p> Name: {session.user.name}</p>
+                    <p>Email: {session.user.email}</p>
+
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: '0.25rem',
+                        width: 'fit-content'
+                    }}>
+                        <button onClick={handleFillme} 
+                        style={{
+                            padding: '0.35rem',
+                            cursor: 'pointer'
+                        }}>fill me 💦</button>
+                        <button 
+                        title='Click on Fill me to fill your contribution chart
+                        (20) random contributions to your profile!!completly safe 👱‍♀️'
+                        onClick={() => {
+                            alert('Click on Fill me to fill your contribution chart (100) random contributions to your profile!!completly safe 👱‍♀️')
+                        }}
+                        style={{
+                            padding: 'none',
+                            background: 'none',
+                            border: 'none',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            cursor: 'pointer'
+                        }}>
+                            <Image src={CatConfuss} width={30} height={30} alt='know more'/>
+                        </button>
+
+                    </div>
                 </div>
             </div>
 
 
-            <GitHubContribution token={(session as any).accessToken!}/>
+            <GitHubContribution token={(session as any).accessToken!} loading={loading} />
+
+            {
+                loading && <LoadingScreen /> 
+            }
             
         </main>
     )

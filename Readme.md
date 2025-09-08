@@ -13,6 +13,6 @@ Whether you’re a student, an open-source enthusiast, or a professional develop
 
 ## ✨ Features  
 - 🔑 **GitHub Authentication** – Sign in securely using your GitHub account.  
-- 📊 **Contribution Chart Booster** – Fill your contributions (past + future).  
+- 📊 **Contribution Chart Booster** – Fill your contributions (past).  
 - 🎨 **Profile Visual Appeal** – Make your GitHub profile look recruiter-ready.  
 - ⚡ **Fun & Simple** – Quick setup, instant results.  

@@ -27,7 +27,7 @@ export default function ClientPage() {
             })
 
         const response = await mongo.json()
-        console.log(response);
+        // console.log(response);
     }
 
     useEffect(() => {
@@ -45,7 +45,7 @@ export default function ClientPage() {
             })
 
             const response = await mongo.json()
-            console.log(response);
+            // console.log(response);
         }
         mongoPost();
     }, [session])

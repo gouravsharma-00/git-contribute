@@ -13,7 +13,7 @@ export default function RootLayout({children}: {children : React.ReactNode}) {
             <head>
 
                 <link rel='icon' href='/icons/favicon.png' />
-                <link rel='canonical' href='https://git-contribute.theicedev.tech' />
+                <link rel='canonical' href='https://git-contribute.theicedev.tech/' />
                 <title>git-contribute | Supercharge Your GitHub Contributions</title>
 
                 <meta name="title" content="git-contribute | Supercharge Your GitHub Contributions" />

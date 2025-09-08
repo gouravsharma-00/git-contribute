@@ -10,7 +10,7 @@ export async function middleware(req: NextRequest) {
 
   // If no session, redirect to login
   if (!token) {
-    return NextResponse.redirect(new URL("/api/auth/signin", req.url))
+    return NextResponse.redirect(new URL("/", req.url))
   }
 
   // If email is not in the allowed list, block access

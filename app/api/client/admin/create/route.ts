@@ -27,7 +27,7 @@ export async function POST(req: Request) {
 
         if (existingUser) {
 
-            console.log('User exist')
+            // console.log('User exist')
             return NextResponse.json(
                 { message: 'User exist', user: existingUser, error: null },
                 { status: 301 }
@@ -41,7 +41,7 @@ export async function POST(req: Request) {
                 email,
                 githubUsername
             })
-            console.log('User created')
+            // console.log('User created')
 
 
             return NextResponse.json(

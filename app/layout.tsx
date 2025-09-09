@@ -27,12 +27,12 @@ export default function RootLayout({children}: {children : React.ReactNode}) {
                 <meta property="og:description" content="Sign in with GitHub and fill your contribution chart — including past history — to make your profile stand out for recruiters." />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://git-contribute.theicedev.tech/" />
-                <meta property="og:image" content="https://git-contribute.theicedev.tech/preview.png" />
+                <meta property="og:image" content="https://git-contribute.theicedev.tech/images/preview.png" />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="git-contribute | Supercharge Your GitHub Contributions" />
                 <meta name="twitter:description" content="Boost your GitHub profile with a filled contribution chart. Sign in with GitHub and impress recruiters." />
-                <meta name="twitter:image" content="https://git-contribute.theicedev.tech/preview.png" />
+                <meta name="twitter:image" content="https://git-contribute.theicedev.tech/images/preview.png" />
 
             </head>
             <body style={{

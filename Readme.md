@@ -1,15 +1,14 @@
 # git-contribute 🚀  
 *Supercharge your GitHub contributions — past, present, and future.*
 
-![Preview Screenshot](/public/images/preview.png)
-
-## 🌟 About the Project  
 A clever and fun way to clickbait recruiters by keeping your GitHub profile active — even when you forget to commit 😉.  
 
-Whether you’re a student, an open-source enthusiast, or a professional developer, this tool helps your profile stand out in seconds.  
+Whether you’re a student, an open-source enthusiast, or a professional developer, this tool helps your profile stand out in seconds.
+
+![Preview Screenshot](/public/images/preview.png)
 
 ---
-# 🚀 About the Project
+## 🌟 About the Project  
 
 **Git Contribute** started with a simple thought: what if your GitHub looked active, even when you’re busy building awesome projects offline?
 
@@ -38,7 +37,28 @@ Perfect for when you have great work to show — but your GitHub doesn’t refle
 - **🔗 GitHub API** – manages authentication and repository commits.
 - **💾 Serverless Functions** – execute commit logic securely and efficiently.
 - **🎨 Tailwind CSS** – clean, minimal, and responsive UI styling.
+---
+## 🌐 Live Demo  
 
+🚀 Try it out now → [**git-contribute**](https://git-contribute.theicedev.tech/)  
+
+---
+
+## 💻 GitHub Repository  
+
+📂 Check the code → [**View on GitHub**](https://github.com/gouravsharma-00/git-contribute)  
+
+---
+
+## 🎥 Watch Me Build it  
+
+[![git-contributr](./public/images/assets/screenshots/vanilla-chess.png)](https://youtu.be/RXNqKf42hVA) 
+ 
+*Click to play on YouTube* 🎬  
+
+---
+
+---
 # 💡 In Short
 
 Git Contribute is your secret weapon to boost your GitHub presence, gain recruiter attention, and show off your work confidently — all while keeping it 100% real and secure.

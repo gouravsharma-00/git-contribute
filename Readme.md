@@ -52,7 +52,7 @@ Perfect for when you have great work to show — but your GitHub doesn’t refle
 
 ## 🎥 Watch Me Build it  
 
-[![git-contributr](./public/images/assets/screenshots/vanilla-chess.png)](https://youtu.be/RXNqKf42hVA) 
+[![git-contributr](public/images/git-contribute.png)](https://youtu.be/RXNqKf42hVA) 
  
 *Click to play on YouTube* 🎬  
 

@@ -53,8 +53,8 @@ export default function FeedBack() {
         boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
         transition: "all 0.2s ease"
       }}
-      onMouseOver={(e) => (e.target.style.background = "#020617")}
-      onMouseOut={(e) => (e.target.style.background = "#0f172a")}
+onMouseOver={(e) => (e.currentTarget.style.background = "#020617")}
+onMouseOut={(e) => (e.currentTarget.style.background = "#0f172a")}
       onClick={openDialog}
     >
       🐞 Report a Bug
@@ -110,8 +110,8 @@ export default function FeedBack() {
             fontFamily: "inherit",
             background: "#f8fafc"
           }}
-          onFocus={(e) => (e.target.style.border = "1px solid #6366f1")}
-          onBlur={(e) => (e.target.style.border = "1px solid #e2e8f0")}
+onFocus={(e) => (e.currentTarget.style.border = "1px solid #6366f1")}
+onBlur={(e) => (e.currentTarget.style.border = "1px solid #e2e8f0")}
         />
 
         <div

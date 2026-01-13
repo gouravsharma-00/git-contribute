@@ -44,22 +44,21 @@ export default function ClientPage() {
                     })
             })
 
-            const response = await mongo.json()
-            // console.log(response);
+
         }
         mongoPost();
     }, [session])
 
 useEffect(() => {
-  alert(
-    "⚠️ To display your full contribution activity, please enable private contributions on your GitHub profile:\n\n" +
-    "1. Go to GitHub and sign in.\n" +
-    "2. Click your profile picture (top-right) → Settings.\n" +
-    "3. In the left sidebar, select 'Profile'.\n" +
-    "4. Scroll down to 'Contributions & activity'.\n" +
-    "5. Check the box for 'Include private contributions on my profile'.\n\n" +
-    "Once enabled, refresh this page to see your updated contributions ✅"
-  );
+alert(
+  "⚠️ To display all of your contribution activity on GitHub, please enable private contributions in your profile settings:\n\n" +
+  "1. Sign in to GitHub.\n" +
+  "2. Click your profile photo (top-right) and open Settings.\n" +
+  "3. Select 'Profile' from the left menu.\n" +
+  "4. Scroll to the 'Contributions & activity' section.\n" +
+  "5. Enable 'Include private contributions on my profile'.\n\n" +
+  "After enabling this option, refresh this page to see your updated contribution graph."
+);
 }, []);
 
 

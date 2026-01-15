@@ -44,7 +44,8 @@ export default function ClientPage() {
                     })
             })
 
-
+            const response = await mongo.json()
+            
         }
         mongoPost();
     }, [session])
